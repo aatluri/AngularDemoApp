@@ -42,4 +42,15 @@ eventsApp.controller('EventController',function($scope){
                 }
             ]
         };
+    
+    
+    
+    $scope.upVoteSession = function(session){
+        session.upVoteCount++;
+    }
+    
+    $scope.downVoteSession = function(session){
+        session.upVoteCount--;
+    }
 });
+
