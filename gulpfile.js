@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var nodemon = require('gulp-nodemon');
-var jsFiles = ['*.js', 'app//js/*.js'];
+var jsFiles = ['*.js','app//js/*.js','./app/js/controllers/*.js','./app/js/services/*.js'];
 
 //This task is a gulp task which runs the JSCS and JSHint against our code
 //We need to install gulp-jshint, gulp-jscs, jshint first using npm
@@ -25,7 +25,7 @@ gulp.task('inject', function(){
     var inject = require('gulp-inject');
     
     //One of the options we pass to gulp-inject to tell it where our custom css and js files are located
-    var injectSrc = gulp.src(['./app/css/*.css' , './app/js/*.js'], {read: false});
+    var injectSrc = gulp.src(['./app/css/*.css' , './app/js/*.js','./app/js/controllers/*.js','./app/js/services/*.js'], {read: false});
     //The second paramter we pass to gulp inject to specify some preferences like in this case to ignore the ../../ in the path
     var injectOptions = {
         ignorePath: '/app'
